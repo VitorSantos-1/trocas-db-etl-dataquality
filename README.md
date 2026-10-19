@@ -90,5 +90,5 @@ fix_duplicatas.py     -> Deduplicação adicional
 
 ## Autor
 
-José Vitor Santos Pinheiro — Análise de Dados e Inteligência Comercial (Varejo e Supply Chain).
+José Vitor Santos Pinheiro — Análise de Dados e Inteligência Comercial (Varejo, Indústria e Distribuição).
 Contato: vytorsantt@gmail.com
