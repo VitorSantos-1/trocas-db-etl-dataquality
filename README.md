@@ -111,7 +111,7 @@ erDiagram
         varchar fornecedor UK
     }
     fato_trocas {
-        bigint pk PK
+        bigint pk_id PK
         char hash_chave UK "chave idempotente (hashlib)"
         int fk_loja FK
         int fk_forn FK
