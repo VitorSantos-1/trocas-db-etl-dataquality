@@ -92,3 +92,34 @@ fix_duplicatas.py     -> Deduplicação adicional
 
 José Vitor Santos Pinheiro — Análise de Dados e Inteligência Comercial (Varejo, Indústria e Distribuição).
 Contato: vytorsantt@gmail.com
+
+## 🗺️ Modelo de Dados (DER)
+
+Modelo dimensional de trocas/devoluções (MySQL). Renderizado pelo GitHub via Mermaid. *Dados fictícios de demonstração.*
+
+```mermaid
+erDiagram
+    dim_lojas ||--o{ fato_trocas : "dimensiona"
+    dim_fornecedor ||--o{ fato_trocas : "dimensiona"
+
+    dim_lojas {
+        int pk_loja PK
+        varchar loja UK
+    }
+    dim_fornecedor {
+        int pk_fornecedor PK
+        varchar fornecedor UK
+    }
+    fato_trocas {
+        bigint pk PK
+        char hash_chave UK "chave idempotente (hashlib)"
+        int fk_loja FK
+        int fk_forn FK
+        varchar produto
+        decimal quantidade
+        decimal valor
+        date data
+    }
+```
+
+**Qualidade de dados:** chave por *hash* (`hash_chave`) garante cargas idempotentes e `UNIQUE` impede duplicatas; rotinas de normalização corrigem nomes e inconsistências.
